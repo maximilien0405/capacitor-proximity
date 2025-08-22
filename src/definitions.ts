@@ -1,3 +1,4 @@
 export interface CapacitorProximityPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  enable(): Promise<void>;
+  disable(): Promise<void>;
 }

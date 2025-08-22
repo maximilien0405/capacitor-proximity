@@ -1,7 +1,7 @@
 {
   "name": "@maximilien0405/capacitor-proximity",
   "version": "0.0.1",
-  "description": "Capacitor plugin to detect when the device is at proximity of something.",
+  "description": "Capacitor plugin to enable and disable the proximity sensor.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

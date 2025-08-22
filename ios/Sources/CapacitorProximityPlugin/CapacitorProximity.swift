@@ -1,8 +1,12 @@
 import Foundation
+import UIKit
 
 @objc public class CapacitorProximity: NSObject {
-    @objc public func echo(_ value: String) -> String {
-        print(value)
-        return value
+    @objc public func enable() {
+        UIDevice.current.isProximityMonitoringEnabled = true
+    }
+
+    @objc public func disable() {
+        UIDevice.current.isProximityMonitoringEnabled = false
     }
 }

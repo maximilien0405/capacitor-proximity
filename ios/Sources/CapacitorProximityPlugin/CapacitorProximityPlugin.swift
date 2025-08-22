@@ -2,22 +2,27 @@ import Foundation
 import Capacitor
 
 /**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
+ * Capacitor Proximity Plugin
+ * Provides enable/disable functions for proximity monitoring
  */
 @objc(CapacitorProximityPlugin)
 public class CapacitorProximityPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "CapacitorProximityPlugin"
     public let jsName = "CapacitorProximity"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "enable", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "disable", returnType: CAPPluginReturnPromise)
     ]
+
     private let implementation = CapacitorProximity()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func enable(_ call: CAPPluginCall) {
+        implementation.enable()
+        call.resolve()
+    }
+
+    @objc func disable(_ call: CAPPluginCall) {
+        implementation.disable()
+        call.resolve()
     }
 }
