@@ -116,7 +116,7 @@ public class CapacitorProximity {
                 call.reject("Failed to register proximity sensor listener");
             }
         } catch (Exception e) {
-            Logger.error(TAG, "Error enabling proximity sensor: " + e.getMessage());
+            Logger.error(TAG, "Error enabling proximity sensor", e);
             call.reject("Failed to enable proximity sensor", e);
         }
     }
@@ -148,7 +148,7 @@ public class CapacitorProximity {
             isProximityMonitoringEnabled = false;
             call.resolve();
         } catch (Exception e) {
-            Logger.error(TAG, "Error disabling proximity sensor: " + e.getMessage());
+            Logger.error(TAG, "Error disabling proximity sensor", e);
             call.reject("Failed to disable proximity sensor", e);
         }
     }
@@ -171,7 +171,7 @@ public class CapacitorProximity {
             
             window.setAttributes(params);
         } catch (Exception e) {
-            Logger.error(TAG, "Error dimming screen: " + e.getMessage());
+            Logger.error(TAG, "Error dimming screen", e);
         }
     }
 
@@ -194,7 +194,7 @@ public class CapacitorProximity {
             
             window.setAttributes(params);
         } catch (Exception e) {
-            Logger.error(TAG, "Error restoring screen: " + e.getMessage());
+            Logger.error(TAG, "Error restoring screen", e);
         }
     }
 }
