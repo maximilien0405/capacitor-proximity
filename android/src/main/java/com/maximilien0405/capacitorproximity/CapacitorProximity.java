@@ -162,11 +162,9 @@ public class CapacitorProximity {
             params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
             
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                // Android 6.0+ (API 23+) - use screen brightness
                 params.screenBrightness = 0.0f;
             } else {
-                // Older versions - use alpha for dimming effect
-                params.alpha = 0.1f;
+                params.alpha = 0.0f;
             }
             
             window.setAttributes(params);
