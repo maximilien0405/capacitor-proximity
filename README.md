@@ -1,43 +1,45 @@
-# @maximilien0405/capacitor-proximity
+# Capacitor Proximity Plugin
 
-Capacitor plugin to enable and disable the proximity sensor. 
+The Capacitor Proximity Plugin allows you to enable and disable the proximity sensor on mobile devices. 
 
-When enabled, this will turn the screen OFF when the device is close to the ear. It can be usefull during calls.
+When enabled, this plugin will automatically dim or turn off the screen when an object is close to the device (typically used during phone calls to prevent accidental touches).
 
-## Install
+## Installation
+
+To install the plugin, run the following commands:
 
 ```bash
 npm install @maximilien0405/capacitor-proximity
 npx cap sync
 ```
 
-## API
-
-<docgen-index>
-
-* [`enable()`](#enable)
-* [`disable()`](#disable)
-
-</docgen-index>
-
-<docgen-api>
-<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-### enable()
-
-```typescript
-enable() => Promise<void>
+And import it just like this:
+```ts
+import { CapacitorProximity } from '@maximilien0405/capacitor-proximity';
 ```
 
---------------------
+## Usage
 
+### Enable Proximity Sensor
 
-### disable()
+This method enables the proximity sensor and starts monitoring for nearby objects. When an object is detected close to the device, the screen will automatically dim or turn off.
 
-```typescript
-disable() => Promise<void>
+```ts
+await CapacitorProximity.enable();
 ```
 
---------------------
+### Disable Proximity Sensor
 
-</docgen-api>
+This method disables the proximity sensor and stops monitoring. The screen will be restored to its normal brightness and behavior.
+
+```ts
+await CapacitorProximity.disable();
+```
+
+## Support
+
+For issues or feature requests, please open an issue on the [GitHub repository](https://github.com/maximilien0405/capacitor-proximity).
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

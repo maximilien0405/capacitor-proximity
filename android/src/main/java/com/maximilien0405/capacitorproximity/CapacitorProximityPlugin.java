@@ -9,14 +9,21 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "CapacitorProximity")
 public class CapacitorProximityPlugin extends Plugin {
 
-    private CapacitorProximity implementation = new CapacitorProximity();
+    private CapacitorProximity capacitorProximity;
+
+    @Override
+    public void load() {
+        super.load();
+        capacitorProximity = new CapacitorProximity(getActivity(), getBridge());
+    }
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void enable(PluginCall call) {
+        capacitorProximity.enable(call);
+    }
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+    @PluginMethod
+    public void disable(PluginCall call) {
+        capacitorProximity.disable(call);
     }
 }

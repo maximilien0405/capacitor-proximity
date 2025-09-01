@@ -11,14 +11,15 @@
   </head>
   <body>
     <main>
-      <h1>Capacitor Test Plugin Project</h1>
-      <p>
-        This project can be used to test out the functionality of your plugin. Nothing in the
-        <em>example-app/</em> folder will be published to npm when using this template, so you can create away!
-      </p>
-      <label for="echoInput">Echo Text:</label>
-      <input type="text" id="echoInput" name="echoInput" value="Hello World!" />
-      <button onclick="testEcho()">Click Me!</button>
+      <h1>Capacitor Proximity Plugin Test</h1>
+      
+      <!-- Enable proximity -->
+      <button onclick="enablePriximity()">Enable Proximity</button>
+      
+      <!-- Disable proximity -->
+      <button onclick="disableProximity()">Disable Proximity</button>
+      
+      <p id="status"></p>
     </main>
 
     <script src="./js/example.js" type="module"></script>
