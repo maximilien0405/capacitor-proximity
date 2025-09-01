@@ -10,8 +10,9 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.view.Window;
 import android.view.WindowManager;
-import com.getcapacitor.Logger;
+import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
+import com.getcapacitor.Bridge;
 
 public class CapacitorProximity {
     private static final String TAG = "CapacitorProximity";
